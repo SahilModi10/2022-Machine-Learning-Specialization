@@ -112,7 +112,5 @@ def plt_relu_ex():
     ax[3].set_title("Unit 2")
     ax[3].legend()
     plt.tight_layout()
-
-    plt.show()
     return([sw1,sw2,sb1,sb2,artists]) # returned to keep a live reference to sliders
 

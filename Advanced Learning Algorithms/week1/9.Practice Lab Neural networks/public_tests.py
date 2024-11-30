@@ -1,13 +1,14 @@
 # UNIT TESTS
-from tensorflow.keras.activations import sigmoid
-from tensorflow.keras.layers import Dense
+from tensorflow import keras
+from keras.activations import sigmoid
+from keras.layers import Dense
 
 import numpy as np
 
 def test_c1(target):
     assert len(target.layers) == 3, \
         f"Wrong number of layers. Expected 3 but got {len(target.layers)}"
-    assert target.input.shape.as_list() == [None, 400], \
+    assert target.get_layer(index=0).input.shape == [None, 400], \
         f"Wrong input shape. Expected [None,  400] but got {target.input.shape.as_list()}"
     i = 0
     expected = [[Dense, [None, 25], sigmoid],
